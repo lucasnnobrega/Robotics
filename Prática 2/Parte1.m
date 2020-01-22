@@ -30,7 +30,7 @@ endLocation = [8 6]
 
 %% Colocar o restante dos parâmetros para incluir os pontos inicial e final nos nós
 
-prm.NumNodes = 200;
+prm.NumNodes = 1000;
 prm.ConnectionDistance = 15;
 show(prm)
 
