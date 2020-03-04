@@ -1,0 +1,62 @@
+[System]
+Name='fuzzy_confirma'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=2
+NumRules=0
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Ex'
+Range=[-2 2]
+NumMFs=5
+MF1='Grande(neg)':'trapmf',[-90.11 -10.99 -1.08 -0.92]
+MF2='Zero':'trimf',[-0.25 0 0.25]
+MF3='Grande(pos)':'trapmf',[0.906 1.064 9.972 81.11]
+MF4='Pequeno(neg)':'trimf',[-1.25 -0.625 0]
+MF5='Pequeno(pos)':'trimf',[0 0.625 1.25]
+
+[Input2]
+Name='Ey'
+Range=[-2 2]
+NumMFs=5
+MF1='Grande(neg)':'trapmf',[-90.11 -10.99 -1.08 -0.92]
+MF2='mf2':'trimf',[-0.25 0 0.25]
+MF3='Grande(pos)':'trapmf',[0.906 1.064 9.972 81.11]
+MF4='Pequeno(neg)':'trimf',[-1.25 -0.625 0]
+MF5='Pequeno(pos)':'trimf',[0 0.625 1.25]
+
+[Input3]
+Name='Eteta'
+Range=[-3 3]
+NumMFs=5
+MF1='Pequeno(neg)':'trimf',[-2 -1 0]
+MF2='Zero':'trimf',[-0.33 0 0.33]
+MF3='Pequeno(pos)':'trimf',[0 1 2]
+MF4='Grande(neg)':'trimf',[-200 -1.9 -1.6]
+MF5='Grande(pos)':'trimf',[1.6 1.9 200]
+
+[Output1]
+Name='v'
+Range=[0 0.65]
+NumMFs=3
+MF1='Zero':'trimf',[-0.2709 0 0.15]
+MF2='Lento':'trimf',[0.05 0.2 0.35]
+MF3='Rapido':'trimf',[0.25 0.4 200]
+
+[Output2]
+Name='w'
+Range=[-3 3.2]
+NumMFs=5
+MF1='Rapido(neg)':'trapmf',[-180.2 -21.62 -1.78 -1.62]
+MF2='Zero':'trimf',[-0.75 0 0.75]
+MF3='Rapido(pos)':'trapmf',[1.62 1.78 21.62 180.2]
+MF4='Lento(neg)':'trimf',[-1.9 -1.15 -0.4]
+MF5='Lento(pos)':'trimf',[0.4 1.15 1.9]
+
+[Rules]
