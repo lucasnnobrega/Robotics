@@ -1,0 +1,11 @@
+rng('default'); % for repeatable result
+dt = 0.05; % time step
+initialPose = [0 0 0 0]';
+
+carbot = ExampleHelperCarBot(initialPose, dt);
+
+pf = robotics.ParticleFilter;
+
+initialize(pf, 500, [initialPose(1:3)', 0, 0, 0], eye(6), 'CircularVariables', [0 0 1 0 0 0]);
+pf.StateEstimationMethod = 'mean';
+pf.ResamplingMethod = '
